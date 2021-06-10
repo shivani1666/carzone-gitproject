@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
+{% block title %} | Our Cars Inventory {% endblock %}
 {% block content %}
 
 {% load humanize %}
+
 <!-- Sub banner start -->
 <div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
@@ -32,7 +34,7 @@
                                 <a href="{% url 'car_detail' car.id %}" class="car-img">
                                     <div class="tag">For Rent</div>
                                     <div class="price-box">
-                                        <span>${{car.price | intcomma }}</span>
+                                        <span>$ {{car.price | intcomma }}</span>
                                     </div>
                                     <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car" style="min-height:262px; max-height:262px">
                                 </a>
@@ -99,7 +101,7 @@
                         <ul class="pagination">
                           {% if cars.has_previous %}
                             <li class="page-item">
-                                <a class="page-link" href="?page={{ cars.previous_page_number }}"><i class="fa fa-angle-left"></i></a>
+                                <a class="page-link" href="?page={{cars.previous_page_number}}"><i class="fa fa-angle-left"></i></a>
                             </li>
                           {% else %}
                             <li class="page-item disabled" >
@@ -108,7 +110,7 @@
                           {% endif %}
 
                           {% for i in cars.paginator.page_range %}
-                            {% if cars.number == i%}
+                            {% if cars.number == i %}
                               <li class="page-item"><a class="page-link active" href="#">{{i}}</a></li>
                             {% else %}
                               <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
@@ -117,7 +119,7 @@
 
                           {% if cars.has_next %}
                             <li class="page-item">
-                                <a class="page-link" href="?page={{ cars.next_page_number }}"><i class="fa fa-angle-right"></i></a>
+                                <a class="page-link" href="?page={{cars.next_page_number}}"><i class="fa fa-angle-right"></i></a>
                             </li>
                           {% else %}
                             <li class="page-item disabled" >
