@@ -116,17 +116,17 @@
                     <div class="car-thumbnail">
                         <a href="{% url 'car_detail' car.id %}" class="car-img">
                             <div class="tag">For Sale</div>
-                            <img class="d-block w-100" src="{{ car.car_photo.url }}" alt="car" style="min-height:262px; max-height:262px">
+                            <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car" style="min-height:262px; max-height:262px">
                             <div class="facilities-list clearfix">
                                 <ul>
                                     <li>
-                                        <span><i class="flaticon-way"></i></span>{{ car.miles | intcomma }} km
+                                        <span><i class="flaticon-way"></i></span>{{car.miles | intcomma}} km
                                     </li>
                                     <li>
-                                        <span><i class="flaticon-calendar-1"></i></span>{{ car.year }}
+                                        <span><i class="flaticon-calendar-1"></i></span>{{car.year}}
                                     </li>
                                     <li>
-                                        <span><i class="flaticon-manual-transmission"></i></span>{{ car.transmission }}
+                                        <span><i class="flaticon-manual-transmission"></i></span>{{car.transmission}}
                                     </li>
                                 </ul>
                             </div>
